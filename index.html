@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt: Przelicznik walut</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="d-flex py-3 mb-4 border-bottom">
+        <img src="img/logo.svg" alt="Currency Logo" />
+        <h1 class="display-4">Przelicznik walut</h1>
+      </header>
+
+      <form class="js-calculate form-inline" method="get">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Kwota</label>
+            <input
+              type="number"
+              class="form-control mb-2"
+              id="amountInput"
+              step=".01"
+              placeholder="kwota"
+            />
+          </div>
+          <div class="col-auto">
+            <select class="form-select mb-2" id="currenciesList">
+              <option value="eur">EUR</option>
+              <option value="usd">USD</option>
+              <option value="chf">CHF</option>
+            </select>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Przelicz</button>
+          </div>
+          <div class="col-auto">TO</div>
+          <div class="col-auto font-weight-bold border bg-light">
+            <h3 id="result">0 PLN</h3>
+          </div>
+        </div>
+      </form>
+      <div class="progress mt-4">
+        <div
+          class="progress-bar bg-success"
+          role="progressbar"
+          style="width: 0%"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

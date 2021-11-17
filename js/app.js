@@ -1,5 +1,6 @@
 const apiCurrencies = axios.create({
-  baseURL: "http://api.nbp.pl/api/exchangerates/rates/a",
+  baseURL: "https://api.nbp.pl/api/exchangerates/rates/a",
+
   onDownloadProgress: (progressEvent) => {
     let percentCompleted = Math.round(
       (progressEvent.loaded * 100) / progressEvent.total
